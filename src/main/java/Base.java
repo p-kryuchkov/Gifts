@@ -1,3 +1,8 @@
+// Формируется новогодний подарок. Он может включать в себя разные сладости (Candy, Jellybean, etc.)
+// У каждой сладости есть название, вес, цена и свой уникальный параметр.
+// Необходимо собрать подарок из сладостей.
+// Найти общий вес подарка, общую стоимость подарка и вывести на консоль информацию о всех сладостях в подарке.
+
 import gifts.*;
 
 
@@ -9,9 +14,9 @@ public class Base {
         Cake cake1 = new Cake("Cake1", 66.33, 689, "Глобус");
         Cake cake2 = new Cake("Cake2", 903, 12.88, "Ашан");
         Cake cake3 = new Cake("Cake3", 90.44, 56, "Спар");
-        Cookie cookie1 = new Cookie("Cookie1", 3, 0.98, "Россия");
+        Cookie cookie1 = new Cookie("Cookie1", 3, 0.9, "Россия");
         Cookie cookie2 = new Cookie("Cookie2", 4.44, 6.8, "Чехия");
-        Cookie cookie3 = new Cookie("Cookie3", 12.36, 8.88, "Польша");
+        Cookie cookie3 = new Cookie("Cookie3", 12.36, 8.89, "Польша");
         Jellybean jellybean1 = new Jellybean("Jellybean1", 65.7, 45.34, "Красный");
         Jellybean jellybean2 = new Jellybean("Jellybean2", 88.432, 90.43, "Зеленый");
         Jellybean jellybean3 = new Jellybean("Jellybean3", 5, 4, "Синий");
@@ -19,5 +24,15 @@ public class Base {
         for (Gift someGift : box) {
             System.out.println(someGift.toString());
         }
+        double sumprice = cake1.getPrice() + cake2.getPrice() + cake3.getPrice()
+                + candy1.getPrice() + candy2.getPrice() + candy3.getPrice()
+                + cookie1.getPrice() + cookie2.getPrice() + cookie3.getPrice()
+                + jellybean1.getPrice() + jellybean2.getPrice() + jellybean3.getPrice();
+        System.out.println("Общая сумма подарка: " + sumprice);
+        double sumweight = cake1.getWeight() + cake2.getWeight() + cake3.getWeight()
+                + candy1.getWeight() + candy2.getWeight() + candy3.getWeight()
+                + cookie1.getWeight() + cookie2.getWeight() + cookie3.getWeight()
+                + jellybean1.getWeight() + jellybean2.getWeight() + jellybean3.getWeight();
+        System.out.println("Общий вес подарка: " + sumweight);
     }
 }
