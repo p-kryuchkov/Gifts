@@ -21,18 +21,14 @@ public class Base {
         Jellybean jellybean2 = new Jellybean("Jellybean2", 88.432, 90.43, "Зеленый");
         Jellybean jellybean3 = new Jellybean("Jellybean3", 5, 4, "Синий");
         Gift[] box = {candy1, candy2, candy3, cake1, cake2, cake3, cookie1, cookie2, cookie3, jellybean1, jellybean2, jellybean3};
+        double sumprice = 0.0;
+        double sumweight = 0.0;
         for (Gift someGift : box) {
             System.out.println(someGift.toString());
+            sumprice += someGift.getPrice();
+            sumweight += someGift.getWeight();
         }
-        double sumprice = cake1.getPrice() + cake2.getPrice() + cake3.getPrice()
-                + candy1.getPrice() + candy2.getPrice() + candy3.getPrice()
-                + cookie1.getPrice() + cookie2.getPrice() + cookie3.getPrice()
-                + jellybean1.getPrice() + jellybean2.getPrice() + jellybean3.getPrice();
         System.out.println("Общая сумма подарка: " + sumprice);
-        double sumweight = cake1.getWeight() + cake2.getWeight() + cake3.getWeight()
-                + candy1.getWeight() + candy2.getWeight() + candy3.getWeight()
-                + cookie1.getWeight() + cookie2.getWeight() + cookie3.getWeight()
-                + jellybean1.getWeight() + jellybean2.getWeight() + jellybean3.getWeight();
         System.out.println("Общий вес подарка: " + sumweight);
     }
 }
